@@ -1,6 +1,4 @@
-/* ===============================
-   1. Переменные проекта
-   =============================== */
+/* 1. Переменные проекта */
 
 :root {
   /* Основные цвета проекта */
@@ -33,13 +31,16 @@
   --container-width: 1100px;
 }
 
-/* ===============================
-   2. Базовые стили
-   =============================== */
+/* 2. Базовые стили */
 
 /* padding и border входят в заданную ширину элемента */
 * {
   box-sizing: border-box;
+}
+
+/* плавная прокрутка при переходе по якорным ссылкам */
+html {
+  scroll-behavior: smooth;
 }
 
 /* убираем стандартный отступ браузера вокруг страницы */
@@ -65,9 +66,7 @@ footer {
   background-color: var(--color-surface);
 }
 
-/* ===============================
-   3. Общие элементы интерфейса
-   =============================== */
+/* 3. Общие элементы интерфейса */
 
 a {
   color: var(--color-primary);
@@ -80,6 +79,12 @@ a:hover {
 a:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
+}
+
+/* раздел, на который указывает якорная ссылка */
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
 }
 
 .button {
@@ -114,9 +119,7 @@ a:focus-visible {
   cursor: not-allowed;
 }
 
-/* ===============================
-   4. Компоненты страницы
-   =============================== */
+/* 4. Компоненты страницы */
 
 /* Шапка и навигация */
 
@@ -157,6 +160,21 @@ a:focus-visible {
 
 .site-nav__link:hover {
   text-decoration: underline;
+}
+
+/* Хлебные крошки */
+
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+/* разделитель перед названием текущей страницы */
+.breadcrumbs span::before {
+  content: " / ";
+  color: var(--color-muted);
 }
 
 /* Секции страницы */
@@ -280,6 +298,17 @@ a:focus-visible {
   color: var(--color-white);
 }
 
+/* Список контактов */
+
+.contacts-list {
+  margin: 0;
+  padding-left: var(--space-lg);
+}
+
+.contacts-list li {
+  margin-bottom: var(--space-xs);
+}
+
 /* Дополнительный блок */
 
 .aside-info {
@@ -290,9 +319,7 @@ a:focus-visible {
   background-color: var(--color-surface);
 }
 
-/* ===============================
-   5. Форма и модальное окно
-   =============================== */
+/* 5. Форма и модальное окно */
 
 .order-dialog {
   width: min(100% - 32px, 560px);
