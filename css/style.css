@@ -148,18 +148,25 @@ a:focus-visible {
 .site-nav__list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: var(--space-md);
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
+/* inline-block нужен, чтобы у ссылки работали внутренние отступы */
 .site-nav__link {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
   text-decoration: none;
 }
 
 .site-nav__link:hover {
-  text-decoration: underline;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 /* Хлебные крошки */
@@ -198,10 +205,10 @@ a:focus-visible {
 
 /* Карточки товаров */
 
-/* CSS Grid: сетка карточек, колонки подстраиваются под ширину экрана */
-.product-list {
+/* CSS Grid: сетка карточек, колонки подстраиваются под ширину контейнера */
+.products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--space-lg);
 }
 
@@ -210,6 +217,7 @@ a:focus-visible {
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: var(--space-sm);
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -240,16 +248,16 @@ a:focus-visible {
 }
 
 .product-card__title {
-  margin: var(--space-md) 0 var(--space-sm);
+  margin: 0;
 }
 
 .product-card__text {
-  margin: 0 0 var(--space-sm);
+  margin: 0;
   color: var(--color-muted);
 }
 
 .product-card__price {
-  margin: 0 0 var(--space-md);
+  margin: 0;
   font-weight: bold;
 }
 
@@ -257,6 +265,72 @@ a:focus-visible {
 .product-card__button {
   margin-top: auto;
   align-self: flex-start;
+}
+
+/* Страница каталога */
+
+/* CSS Grid: фильтры в левой колонке, товары в правой */
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-areas: "filters products";
+  gap: var(--space-lg);
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+}
+
+.catalog-filters {
+  grid-area: filters;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.catalog-filters h2 {
+  margin-top: 0;
+}
+
+.catalog-products {
+  grid-area: products;
+}
+
+.catalog-products h2 {
+  margin-top: 0;
+}
+
+/* Grid: группы фильтров друг под другом с одинаковым отступом */
+.filters-form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.filters-form fieldset {
+  margin: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.filters-form legend {
+  font-weight: bold;
+}
+
+.filters-form label {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.filters-form input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+}
+
+.filters-form input[type="number"]:hover {
+  border-color: var(--color-primary);
 }
 
 /* Подвал */
