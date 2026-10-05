@@ -298,17 +298,6 @@ a:focus-visible {
   color: var(--color-white);
 }
 
-/* Список контактов */
-
-.contacts-list {
-  margin: 0;
-  padding-left: var(--space-lg);
-}
-
-.contacts-list li {
-  margin-bottom: var(--space-xs);
-}
-
 /* Дополнительный блок */
 
 .aside-info {
