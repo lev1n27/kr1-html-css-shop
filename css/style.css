@@ -52,22 +52,6 @@ body {
   background-color: var(--color-bg);
 }
 
-header,
-main,
-footer {
-  padding: var(--space-lg);
-}
-
-header {
-  background-color: var(--color-surface);
-}
-
-footer {
-  background-color: var(--color-surface);
-}
-
-/* 3. Общие элементы интерфейса */
-
 a {
   color: var(--color-primary);
 }
@@ -87,25 +71,17 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
+/* 3. Общие элементы интерфейса */
+
+/* Кнопка: базовый блок, цвет задаётся модификатором */
 .button {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
-  color: var(--color-white);
-  background-color: var(--color-primary);
-  text-decoration: none;
-  border: none;
+  border: 1px solid transparent;
   border-radius: var(--radius-sm);
-  cursor: pointer;
   font: inherit;
-}
-
-.button:hover {
-  background-color: var(--color-primary-dark);
-  color: var(--color-white);
-}
-
-.button:active {
-  background-color: var(--color-primary-dark);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .button:focus-visible {
@@ -113,15 +89,49 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+.button--primary {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.button--primary:hover,
+.button--primary:active {
+  color: var(--color-white);
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.button--secondary {
+  color: var(--color-text);
+  background-color: var(--color-white);
+  border-color: var(--color-border);
+}
+
+.button--secondary:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
 /* отключённая кнопка не должна выглядеть как обычная */
-.button:disabled {
+.button:disabled,
+.button--disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
 /* 4. Компоненты страницы */
 
+.page-content {
+  padding: var(--space-lg);
+}
+
 /* Шапка и навигация */
+
+.site-header {
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+}
 
 /* Flexbox: логотип слева, меню справа */
 .site-header__inner {
@@ -164,7 +174,8 @@ a:focus-visible {
   text-decoration: none;
 }
 
-.site-nav__link:hover {
+.site-nav__link:hover,
+.site-nav__link--active {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
@@ -179,7 +190,7 @@ a:focus-visible {
 }
 
 /* разделитель перед названием текущей страницы */
-.breadcrumbs span::before {
+.breadcrumbs__current::before {
   content: " / ";
   color: var(--color-muted);
 }
@@ -199,7 +210,7 @@ a:focus-visible {
   margin: 0 auto var(--space-xl);
 }
 
-.section h2 {
+.section__title {
   margin-top: 0;
 }
 
@@ -225,7 +236,8 @@ a:focus-visible {
 }
 
 /* показываем, что карточка интерактивная */
-.product-card:hover {
+.product-card:hover,
+.product-card--featured {
   border-color: var(--color-primary);
 }
 
@@ -251,7 +263,7 @@ a:focus-visible {
   margin: 0;
 }
 
-.product-card__text {
+.product-card__description {
   margin: 0;
   color: var(--color-muted);
 }
@@ -279,6 +291,14 @@ a:focus-visible {
   margin: 0 auto var(--space-xl);
 }
 
+.catalog-products {
+  grid-area: products;
+}
+
+.catalog-products__title {
+  margin-top: 0;
+}
+
 .catalog-filters {
   grid-area: filters;
   padding: var(--space-md);
@@ -287,41 +307,33 @@ a:focus-visible {
   background-color: var(--color-surface);
 }
 
-.catalog-filters h2 {
-  margin-top: 0;
-}
-
-.catalog-products {
-  grid-area: products;
-}
-
-.catalog-products h2 {
+.catalog-filters__title {
   margin-top: 0;
 }
 
 /* Grid: группы фильтров друг под другом с одинаковым отступом */
-.filters-form {
+.catalog-filters__form {
   display: grid;
   gap: var(--space-md);
 }
 
-.filters-form fieldset {
+.catalog-filters__group {
   margin: 0;
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
 }
 
-.filters-form legend {
+.catalog-filters__legend {
   font-weight: bold;
 }
 
-.filters-form label {
+.catalog-filters__label {
   display: block;
   margin-bottom: var(--space-sm);
 }
 
-.filters-form input[type="number"] {
+.catalog-filters__input {
   width: 100%;
   padding: 8px 10px;
   border: 1px solid var(--color-border);
@@ -329,7 +341,7 @@ a:focus-visible {
   font: inherit;
 }
 
-.filters-form input[type="number"]:hover {
+.catalog-filters__input:hover {
   border-color: var(--color-primary);
 }
 
@@ -337,7 +349,8 @@ a:focus-visible {
 
 /* нижний отступ, чтобы кнопка «Наверх» не перекрывала текст подвала */
 .site-footer {
-  padding-bottom: 72px;
+  padding: var(--space-lg) var(--space-lg) 72px;
+  background-color: var(--color-surface);
 }
 
 /* Flexbox: строки подвала разносятся по краям */
@@ -374,7 +387,7 @@ a:focus-visible {
 
 /* Дополнительный блок */
 
-.aside-info {
+.info-panel {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
   padding: var(--space-md);
@@ -396,18 +409,22 @@ a:focus-visible {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.form-field {
+.order-dialog__title {
+  margin-top: 0;
+}
+
+.order-form__field {
   margin-bottom: var(--space-md);
 }
 
-.form-field label {
+.order-form__label {
   display: block;
   margin-bottom: var(--space-xs);
 }
 
-.form-field input,
-.form-field select,
-.form-field textarea {
+.order-form__input,
+.order-form__select,
+.order-form__textarea {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--color-border);
@@ -415,80 +432,45 @@ a:focus-visible {
   font: inherit;
 }
 
-/* checkbox не должен занимать всю ширину */
-.form-field input[type="checkbox"] {
-  width: auto;
-}
-
-/* подсказка под полем телефона */
-.form-field small {
-  display: block;
-  margin-top: var(--space-xs);
-  color: var(--color-muted);
-}
-
-.form-field input:hover,
-.form-field select:hover,
-.form-field textarea:hover {
+.order-form__input:hover,
+.order-form__select:hover,
+.order-form__textarea:hover {
   border-color: var(--color-primary);
 }
 
 /* видимый фокус при навигации с клавиатуры */
-.form-field input:focus-visible,
-.form-field select:focus-visible,
-.form-field textarea:focus-visible,
-.form-actions button:focus-visible {
+.order-form__input:focus-visible,
+.order-form__select:focus-visible,
+.order-form__textarea:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
 }
 
-.form-field input:disabled,
-.form-field select:disabled,
-.form-field textarea:disabled {
+.order-form__input:disabled,
+.order-form__select:disabled,
+.order-form__textarea:disabled {
   background-color: var(--color-surface);
   cursor: not-allowed;
 }
 
 /* подсветка ошибочных полей, aria-invalid ставится из JS */
-[aria-invalid="true"] {
+.order-form__input[aria-invalid="true"],
+.order-form__select[aria-invalid="true"],
+.order-form__textarea[aria-invalid="true"] {
   border-color: var(--color-danger);
 }
 
-.form-actions {
+/* подсказка под полем телефона */
+.order-form__hint {
+  display: block;
+  margin-top: var(--space-xs);
+  color: var(--color-muted);
+}
+
+.order-form__actions {
   display: flex;
   gap: var(--space-sm);
   margin-top: var(--space-lg);
-}
-
-.form-actions button {
-  padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background-color: var(--color-white);
-  cursor: pointer;
-  font: inherit;
-}
-
-.form-actions button:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
-.form-actions button[type="submit"] {
-  border-color: var(--color-primary);
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-
-.form-actions button[type="submit"]:hover {
-  background-color: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-  color: var(--color-white);
-}
-
-.form-actions button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
 }
 
 /* Сообщение об успешной отправке */

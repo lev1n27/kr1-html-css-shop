@@ -73,6 +73,7 @@
 - Контрольная работа 1: добавлены Flexbox и CSS Grid, БЭМ-именование классов и позиционирование элементов.
 - Практическая работа 5: создана многостраничная структура сайта, добавлены единая навигация и якорные ссылки.
 - Практическая работа 6: добавлены Flexbox-навигация, Grid-сетка карточек и раскладка каталога с фильтрами.
+- Практическая работа 7: выполнен рефакторинг CSS-стилей по методологии БЭМ.
 
 ## Вёрстка: Flexbox и CSS Grid
 
@@ -83,7 +84,7 @@ Flexbox используется там, где элементы выстраи�
   `justify-content: center`, `align-items: center`, `gap`;
 - `.site-footer__inner` — две строки подвала по краям;
 - `.product-card` — вертикальная колонка с `gap`, кнопка прижата к низу через `margin-top: auto`;
-- `.form-actions` — кнопки формы в строку.
+- `.order-form__actions` — кнопки формы в строку.
 
 CSS Grid используется для сеток:
 
@@ -91,17 +92,59 @@ CSS Grid используется для сеток:
   `grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))`;
 - `.catalog-layout` — раскладка каталога `grid-template-columns: 260px 1fr`
   и `grid-template-areas: "filters products"`, блоки занимают области через `grid-area`;
-- `.filters-form` — группы фильтров друг под другом с одинаковым `gap`.
+- `.catalog-filters__form` — группы фильтров друг под другом с одинаковым `gap`.
 
-## БЭМ-именование классов
+## БЭМ-структура проекта
 
-Блок — независимый компонент, элемент — его часть после `__`:
+В проекте используются следующие БЭМ-блоки:
 
-- `.product-card`, `.product-card__img`, `.product-card__title`, `.product-card__price`,
-  `.product-card__text`, `.product-card__button`, `.product-card__badge`;
-- `.site-header`, `.site-header__inner`, `.site-header__logo`;
-- `.site-nav`, `.site-nav__list`, `.site-nav__item`, `.site-nav__link`;
-- `.site-footer`, `.site-footer__inner`, `.site-footer__text`.
+- `site-header` — шапка сайта;
+- `site-nav` — основная навигация;
+- `breadcrumbs` — хлебные крошки;
+- `hero` — первый экран главной страницы;
+- `section` — раздел страницы;
+- `products-grid` — сетка товаров;
+- `product-card` — карточка товара;
+- `catalog-layout` — структура страницы каталога;
+- `catalog-filters` — фильтры каталога;
+- `catalog-products` — список товаров в каталоге;
+- `order-dialog` — модальное окно заявки;
+- `order-form` — форма заявки;
+- `success-message` — сообщение об успешной отправке;
+- `button` — кнопка;
+- `info-panel` — информационный блок на главной;
+- `to-top` — кнопка «Наверх»;
+- `site-footer` — подвал сайта.
+
+Примеры элементов:
+
+- `product-card__img`, `product-card__title`, `product-card__description`,
+  `product-card__price`, `product-card__button`, `product-card__badge`;
+- `site-nav__list`, `site-nav__item`, `site-nav__link`;
+- `breadcrumbs__link`, `breadcrumbs__current`;
+- `order-form__field`, `order-form__label`, `order-form__input`, `order-form__select`,
+  `order-form__textarea`, `order-form__hint`, `order-form__actions`;
+- `order-dialog__title`;
+- `catalog-filters__form`, `catalog-filters__group`, `catalog-filters__label`, `catalog-filters__input`.
+
+Модификаторы:
+
+- `site-nav__link--active` — пункт меню текущей страницы;
+- `product-card--featured` — выделенная карточка (товар с меткой «Хит»);
+- `button--primary`, `button--secondary` — основная и второстепенная кнопка;
+- `button--disabled` — визуально отключённая кнопка.
+
+Что изменено при рефакторинге:
+
+- классы `form-field` и `form-actions` заменены на элементы блока `order-form`;
+- `filters-form` стал элементом `catalog-filters__form`;
+- `aside-info` переименован в `info-panel`;
+- `product-card__text` переименован в `product-card__description`;
+- селекторы вида `.form-field input`, `.filters-form fieldset`, `.section h2`,
+  `.breadcrumbs span` заменены на прямые классы элементов;
+- стили шапки и подвала перенесены с тегов `header` и `footer` на классы
+  `site-header` и `site-footer`;
+- id используются только для якорей и JavaScript, inline-стилей нет.
 
 ## Позиционирование элементов
 
@@ -139,7 +182,7 @@ CSS Grid используется для сеток:
 подсвечивается псевдоклассом `:target`.
 
 На страницах каталога и контактов есть хлебные крошки: ссылка на главную
-и название текущей страницы в теге `span`.
+и название текущей страницы (`breadcrumbs__current`), которое не является ссылкой.
 
 ## Дополнительные элементы
 
