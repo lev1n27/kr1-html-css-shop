@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Подробная карточка товара учебного интернет-магазина: описание, цена и характеристики.">
-  <title>Товар 1 — Учебный интернет-магазин</title>
+  <meta name="description" content="Беспроводные наушники в учебном интернет-магазине: описание, цена и характеристики.">
+  <title>Беспроводные наушники — Учебный интернет-магазин</title>
   <meta property="og:type" content="product">
-  <meta property="og:title" content="Товар 1 — Учебный интернет-магазин">
-  <meta property="og:description" content="Подробная карточка учебного товара с описанием и характеристиками.">
+  <meta property="og:title" content="Беспроводные наушники — Учебный интернет-магазин">
+  <meta property="og:description" content="Накладные беспроводные наушники с Bluetooth 5.3 и работой до 30 часов.">
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="site-header" id="top">
@@ -33,7 +34,8 @@
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
-      <span class="breadcrumbs__current">Товар 1</span>
+      <a class="breadcrumbs__link" href="category-audio.html">Аудио</a>
+      <span class="breadcrumbs__current">Беспроводные наушники</span>
     </nav>
 
     <!-- Подробная карточка: изображение слева, информация о товаре справа -->
@@ -42,34 +44,40 @@
         <span class="product-details__badge">Хит</span>
         <img
           class="product-details__img"
-          src="images/product-1.svg"
-          alt="Изображение товара 1"
-          width="400"
-          height="300"
+          src="images/headphones.jpg"
+          alt="Чёрные накладные наушники на жёлтом фоне"
+          width="800"
+          height="600"
         >
       </div>
 
       <div class="product-details__info">
-        <h1 class="product-details__title">Товар 1</h1>
-        <p class="product-details__category">Категория: популярные товары</p>
+        <h1 class="product-details__title">Беспроводные наушники</h1>
+        <p class="product-details__category">Категория: <a href="category-audio.html">Аудио</a></p>
 
         <p class="product-details__description">
-          Подробное описание учебного товара. Здесь рассказывается,
-          для чего нужен товар, из чего он сделан и чем отличается
-          от других товаров каталога.
+          Закрытые накладные наушники для музыки, звонков и работы.
+          Мягкие амбушюры не давят даже после нескольких часов,
+          а одного заряда хватает на неделю поездок на работу.
         </p>
 
         <ul class="product-details__features">
-          <li>гарантия 12 месяцев;</li>
-          <li>доставка от 1 дня;</li>
-          <li>возврат в течение 14 дней.</li>
+          <li>Bluetooth 5.3 и работа до 30 часов;</li>
+          <li>быстрая зарядка: 10 минут — 3 часа музыки;</li>
+          <li>гарантия 12 месяцев, возврат в течение 14 дней.</li>
         </ul>
 
         <p class="product-details__stock product-details__stock--available">В наличии</p>
-        <p class="product-details__price">1000 руб.</p>
+        <p class="product-details__price">7&nbsp;990 руб.</p>
 
         <div class="product-details__actions">
-          <a class="button button--primary" href="index.html#popular">Оформить заявку</a>
+          <button
+            class="button button--primary"
+            type="button"
+            data-product="Беспроводные наушники"
+            data-price="7 990 руб."
+            data-image="images/headphones.jpg"
+          >Оформить заявку</button>
           <a class="button button--secondary" href="catalog.html">Вернуться в каталог</a>
         </div>
       </div>
@@ -79,31 +87,39 @@
       <h2 class="section__title">Характеристики</h2>
 
       <table class="specs-table">
-        <caption class="specs-table__caption">Характеристики товара 1</caption>
+        <caption class="specs-table__caption">Характеристики беспроводных наушников</caption>
         <tbody>
           <tr>
             <th class="specs-table__head" scope="row">Артикул</th>
             <td class="specs-table__cell">SP-0001</td>
           </tr>
           <tr>
-            <th class="specs-table__head" scope="row">Материал</th>
-            <td class="specs-table__cell">Пластик</td>
+            <th class="specs-table__head" scope="row">Тип</th>
+            <td class="specs-table__cell">Накладные, закрытые</td>
+          </tr>
+          <tr>
+            <th class="specs-table__head" scope="row">Подключение</th>
+            <td class="specs-table__cell">Bluetooth 5.3, кабель 3,5 мм</td>
+          </tr>
+          <tr>
+            <th class="specs-table__head" scope="row">Время работы</th>
+            <td class="specs-table__cell">до 30 ч</td>
           </tr>
           <tr>
             <th class="specs-table__head" scope="row">Размеры</th>
-            <td class="specs-table__cell">20 × 15 × 5 см</td>
+            <td class="specs-table__cell">19 × 17 × 8 см</td>
           </tr>
           <tr>
             <th class="specs-table__head" scope="row">Вес</th>
-            <td class="specs-table__cell">350 г</td>
+            <td class="specs-table__cell">250 г</td>
           </tr>
           <tr>
             <th class="specs-table__head" scope="row">Цвет</th>
-            <td class="specs-table__cell">Синий</td>
+            <td class="specs-table__cell">Чёрный</td>
           </tr>
           <tr>
             <th class="specs-table__head" scope="row">Страна производства</th>
-            <td class="specs-table__cell">Россия</td>
+            <td class="specs-table__cell">Китай</td>
           </tr>
         </tbody>
       </table>
@@ -118,5 +134,146 @@
   </footer>
 
   <a class="to-top" href="#top">Наверх</a>
+
+  <!-- Модальное окно заявки: открывается кнопками с data-product, см. js/main.js -->
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <div class="order-dialog__header">
+      <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+      <button class="order-dialog__close" type="button" aria-label="Закрыть окно" data-dialog-close>&times;</button>
+    </div>
+
+    <div class="order-dialog__content">
+      <!-- выбранный товар, данные подставляются из data-атрибутов кнопки -->
+      <div class="order-dialog__product">
+        <img
+          class="order-dialog__product-img"
+          id="order-product-img"
+          src="images/headphones.jpg"
+          alt=""
+          width="96"
+          height="72"
+        >
+        <div>
+          <p class="order-dialog__product-name" id="order-product-name"></p>
+          <p class="order-dialog__product-price" id="order-product-price"></p>
+        </div>
+      </div>
+
+      <form class="order-form" id="order-form" action="#" method="post" novalidate>
+        <input id="selected-product" name="selected-product" type="hidden">
+
+        <p class="order-form__note">
+          Поля, отмеченные <span class="order-form__required" aria-hidden="true">*</span>, обязательны для заполнения.
+        </p>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-name">
+            Имя <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-name"
+            name="name"
+            type="text"
+            placeholder="Введите ваше имя"
+            minlength="2"
+            autocomplete="given-name"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-email">
+            E-mail <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-email"
+            name="email"
+            type="email"
+            placeholder="example@mail.ru"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-phone">
+            Телефон <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="+7 (900) 000-00-00"
+            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            aria-describedby="order-phone-hint"
+            required
+          >
+          <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-date">Дата связи</label>
+          <input
+            class="order-form__input"
+            id="order-date"
+            name="date"
+            type="date"
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-topic">
+            Тема заявки <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <select class="order-form__select" id="order-topic" name="topic" required>
+            <option value="">Выберите тему</option>
+            <option value="product">Заказ товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-comment">Комментарий</label>
+          <textarea
+            class="order-form__textarea"
+            id="order-comment"
+            name="comment"
+            rows="4"
+            placeholder="Укажите дополнительную информацию"
+          ></textarea>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label">
+            <input
+              id="order-agreement"
+              name="agreement"
+              type="checkbox"
+              required
+            >
+            Я согласен на обработку данных <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+        </div>
+
+        <div class="order-form__actions">
+          <button class="button button--secondary" type="button" data-dialog-close>Отмена</button>
+          <button class="button button--primary" type="submit">Отправить заявку</button>
+        </div>
+      </form>
+
+      <!-- показывается вместо формы после успешной отправки -->
+      <div class="order-dialog__success" id="order-success" role="status" hidden>
+        <span class="order-dialog__success-icon" aria-hidden="true">&#10003;</span>
+        <h3 class="order-dialog__success-title">Заявка отправлена</h3>
+        <p class="order-dialog__success-text" id="order-success-text"></p>
+        <button class="button button--primary" type="button" data-dialog-close>Готово</button>
+      </div>
+    </div>
+  </dialog>
 </body>
 </html>
