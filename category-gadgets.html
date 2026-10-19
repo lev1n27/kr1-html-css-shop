@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Категория «Гаджеты» учебного интернет-магазина: умные часы, смартфоны и камеры моментальной печати.">
+  <title>Гаджеты — Учебный интернет-магазин</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Гаджеты — Учебный интернет-магазин">
+  <meta property="og:description" content="Умные часы, смартфоны и камеры в учебном каталоге.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Гаджеты</span>
+    </nav>
+
+    <!-- Первый экран категории: описание и фото в две колонки (CSS Grid) -->
+    <section class="category-hero">
+      <div>
+        <h1 class="category-hero__title">Гаджеты</h1>
+        <p>
+          Умные часы, смартфоны и камеры моментальной печати.
+          Устройства для спорта, связи и ярких снимков на память.
+        </p>
+
+        <ul class="category-hero__facts">
+          <li class="category-hero__fact">3 товара</li>
+          <li class="category-hero__fact">от 11&nbsp;490 руб.</li>
+          <li class="category-hero__fact">гарантия 12 месяцев</li>
+        </ul>
+      </div>
+
+      <img
+        class="category-hero__img"
+        src="images/category-gadgets.jpg"
+        alt="Двое белых умных часов на светло-сером фоне"
+        width="900"
+        height="600"
+      >
+    </section>
+
+    <nav class="category-nav" aria-label="Категории каталога">
+      <ul class="category-nav__list">
+        <li>
+          <a class="category-nav__link" href="catalog.html">
+            Все товары <span class="category-nav__count">10</span>
+          </a>
+        </li>
+        <li>
+          <a class="category-nav__link" href="category-audio.html">
+            Аудио <span class="category-nav__count">4</span>
+          </a>
+        </li>
+        <li>
+          <a class="category-nav__link category-nav__link--active" href="category-gadgets.html" aria-current="page">
+            Гаджеты <span class="category-nav__count">3</span>
+          </a>
+        </li>
+        <li>
+          <a class="category-nav__link" href="category-computers.html">
+            Компьютеры <span class="category-nav__count">3</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="catalog-layout">
+      <!-- фильтры под эту категорию вместо общих категорий каталога -->
+      <aside class="catalog-filters">
+        <h2 class="catalog-filters__title">Фильтры</h2>
+
+        <form class="catalog-filters__form" action="#" method="get">
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Тип устройства</legend>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="type" value="smartwatch">
+              Умные часы
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="type" value="smartphone">
+              Смартфоны
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="type" value="camera">
+              Фотокамеры
+            </label>
+          </fieldset>
+
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Возможности</legend>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="feature" value="gps">
+              GPS
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="feature" value="nfc">
+              NFC
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="feature" value="water">
+              Защита от воды
+            </label>
+          </fieldset>
+
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Наличие</legend>
+
+            <label class="catalog-filters__label">
+              <input type="radio" name="stock" value="any" checked>
+              Все товары
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="radio" name="stock" value="available">
+              В наличии
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="radio" name="stock" value="order">
+              Под заказ
+            </label>
+          </fieldset>
+
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Цена, руб.</legend>
+
+            <label class="catalog-filters__label" for="price-from">От</label>
+            <input class="catalog-filters__input" id="price-from" name="price-from" type="number" min="0" placeholder="11490">
+
+            <label class="catalog-filters__label" for="price-to">До</label>
+            <input class="catalog-filters__input" id="price-to" name="price-to" type="number" min="0" placeholder="39990">
+          </fieldset>
+
+          <div class="catalog-filters__actions">
+            <button class="button button--primary" type="submit">Применить</button>
+            <button class="button button--secondary" type="reset">Сбросить</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="catalog-products">
+        <h2 class="catalog-products__title">Товары категории</h2>
+
+        <div class="catalog-toolbar">
+          <p class="catalog-toolbar__count">Найдено товаров: 3</p>
+
+          <label class="catalog-toolbar__label">
+            Сортировка
+            <select class="catalog-toolbar__select" name="sort">
+              <option value="popular">По популярности</option>
+              <option value="price-asc">Сначала дешевле</option>
+              <option value="price-desc">Сначала дороже</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--new">Новинка</span>
+            <img
+              class="product-card__img"
+              src="images/smartwatch.jpg"
+              alt="Умные часы с чёрным ремешком"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+
+            <h3 class="product-card__title">Умные часы</h3>
+            <p class="product-card__description">Пульсометр, GPS, уведомления и до 7 дней без подзарядки.</p>
+            <p class="product-card__stock product-card__stock--available">В наличии</p>
+            <p class="product-card__price">14&nbsp;990 руб.</p>
+
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product-smartwatch.html">Подробнее</a>
+              <button
+                class="button button--primary"
+                type="button"
+                data-product="Умные часы"
+                data-price="14 990 руб."
+                data-image="images/smartwatch.jpg"
+              >Заказать</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img
+              class="product-card__img"
+              src="images/smartphone.jpg"
+              alt="Смартфон с экраном приложений, лежащий рядом с ноутбуком"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+
+            <h3 class="product-card__title">Смартфон</h3>
+            <p class="product-card__description">6,1-дюймовый OLED-экран, 128 ГБ памяти и двойная камера.</p>
+            <p class="product-card__stock product-card__stock--available">В наличии</p>
+            <p class="product-card__price">39&nbsp;990 руб.</p>
+
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product-smartphone.html">Подробнее</a>
+              <button
+                class="button button--primary"
+                type="button"
+                data-product="Смартфон"
+                data-price="39 990 руб."
+                data-image="images/smartphone.jpg"
+              >Заказать</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img
+              class="product-card__img"
+              src="images/camera.jpg"
+              alt="Белая камера моментальной печати на светлом фоне"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+
+            <h3 class="product-card__title">Камера моментальной печати</h3>
+            <p class="product-card__description">Печатает снимок сразу после съёмки, встроенная вспышка.</p>
+            <p class="product-card__stock product-card__stock--order">Под заказ, 3–5 дней</p>
+            <p class="product-card__price">11&nbsp;490 руб.</p>
+
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product-camera.html">Подробнее</a>
+              <button
+                class="button button--primary"
+                type="button"
+                data-product="Камера моментальной печати"
+                data-price="11 490 руб."
+                data-image="images/camera.jpg"
+              >Заказать</button>
+            </div>
+          </article>
+        </div>
+
+        <section class="catalog-products__extra" id="tips">
+          <h2 class="section__title">Как выбрать гаджет</h2>
+
+          <div class="tips">
+            <article class="tips__item">
+              <h3 class="tips__title">Автономность часов</h3>
+              <p class="tips__text">
+                Часы с AMOLED-экраном работают 5–7 дней,
+                с постоянно включённым экраном — вдвое меньше.
+              </p>
+            </article>
+
+            <article class="tips__item">
+              <h3 class="tips__title">Память смартфона</h3>
+              <p class="tips__text">
+                128 ГБ хватает на приложения и фото,
+                для съёмки видео в 4K лучше взять 256 ГБ.
+              </p>
+            </article>
+
+            <article class="tips__item">
+              <h3 class="tips__title">Плавание с часами</h3>
+              <p class="tips__text">
+                Для бассейна нужна защита не ниже 5 ATM:
+                IP68 защищает только от брызг и дождя.
+              </p>
+            </article>
+
+            <article class="tips__item">
+              <h3 class="tips__title">Кассеты для камеры</h3>
+              <p class="tips__text">
+                Одной кассеты хватает на 8–10 снимков,
+                поэтому лучше сразу взять несколько.
+              </p>
+            </article>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+      <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+
+  <a class="to-top" href="#top">Наверх</a>
+
+  <!-- Модальное окно заявки: открывается кнопками с data-product, см. js/main.js -->
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <div class="order-dialog__header">
+      <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+      <button class="order-dialog__close" type="button" aria-label="Закрыть окно" data-dialog-close>&times;</button>
+    </div>
+
+    <div class="order-dialog__content">
+      <!-- выбранный товар, данные подставляются из data-атрибутов кнопки -->
+      <div class="order-dialog__product">
+        <img
+          class="order-dialog__product-img"
+          id="order-product-img"
+          src="images/headphones.jpg"
+          alt=""
+          width="96"
+          height="72"
+        >
+        <div>
+          <p class="order-dialog__product-name" id="order-product-name"></p>
+          <p class="order-dialog__product-price" id="order-product-price"></p>
+        </div>
+      </div>
+
+      <form class="order-form" id="order-form" action="#" method="post" novalidate>
+        <input id="selected-product" name="selected-product" type="hidden">
+
+        <p class="order-form__note">
+          Поля, отмеченные <span class="order-form__required" aria-hidden="true">*</span>, обязательны для заполнения.
+        </p>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-name">
+            Имя <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-name"
+            name="name"
+            type="text"
+            placeholder="Введите ваше имя"
+            minlength="2"
+            autocomplete="given-name"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-email">
+            E-mail <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-email"
+            name="email"
+            type="email"
+            placeholder="example@mail.ru"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-phone">
+            Телефон <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="+7 (900) 000-00-00"
+            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            aria-describedby="order-phone-hint"
+            required
+          >
+          <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-date">Дата связи</label>
+          <input
+            class="order-form__input"
+            id="order-date"
+            name="date"
+            type="date"
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-topic">
+            Тема заявки <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <select class="order-form__select" id="order-topic" name="topic" required>
+            <option value="">Выберите тему</option>
+            <option value="product">Заказ товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-comment">Комментарий</label>
+          <textarea
+            class="order-form__textarea"
+            id="order-comment"
+            name="comment"
+            rows="4"
+            placeholder="Укажите дополнительную информацию"
+          ></textarea>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label">
+            <input
+              id="order-agreement"
+              name="agreement"
+              type="checkbox"
+              required
+            >
+            Я согласен на обработку данных <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+        </div>
+
+        <div class="order-form__actions">
+          <button class="button button--secondary" type="button" data-dialog-close>Отмена</button>
+          <button class="button button--primary" type="submit">Отправить заявку</button>
+        </div>
+      </form>
+
+      <!-- показывается вместо формы после успешной отправки -->
+      <div class="order-dialog__success" id="order-success" role="status" hidden>
+        <span class="order-dialog__success-icon" aria-hidden="true">&#10003;</span>
+        <h3 class="order-dialog__success-title">Заявка отправлена</h3>
+        <p class="order-dialog__success-text" id="order-success-text"></p>
+        <button class="button button--primary" type="button" data-dialog-close>Готово</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

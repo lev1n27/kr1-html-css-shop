@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Категория «Компьютеры» учебного интернет-магазина: ноутбуки, клавиатуры и мыши.">
+  <title>Компьютеры — Учебный интернет-магазин</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Компьютеры — Учебный интернет-магазин">
+  <meta property="og:description" content="Ноутбуки, клавиатуры и мыши в учебном каталоге.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Компьютеры</span>
+    </nav>
+
+    <!-- Первый экран категории: описание и фото в две колонки (CSS Grid) -->
+    <section class="category-hero">
+      <div>
+        <h1 class="category-hero__title">Компьютеры</h1>
+        <p>
+          Ноутбуки и периферия для учёбы, работы и дома.
+          Всё, чтобы собрать удобное рабочее место.
+        </p>
+
+        <ul class="category-hero__facts">
+          <li class="category-hero__fact">3 товара</li>
+          <li class="category-hero__fact">от 1&nbsp;290 руб.</li>
+          <li class="category-hero__fact">гарантия до 24 месяцев</li>
+        </ul>
+      </div>
+
+      <img
+        class="category-hero__img"
+        src="images/category-computers.jpg"
+        alt="Клавиатура и тачпад ноутбука в фиолетовой подсветке"
+        width="900"
+        height="600"
+      >
+    </section>
+
+    <nav class="category-nav" aria-label="Категории каталога">
+      <ul class="category-nav__list">
+        <li>
+          <a class="category-nav__link" href="catalog.html">
+            Все товары <span class="category-nav__count">10</span>
+          </a>
+        </li>
+        <li>
+          <a class="category-nav__link" href="category-audio.html">
+            Аудио <span class="category-nav__count">4</span>
+          </a>
+        </li>
+        <li>
+          <a class="category-nav__link" href="category-gadgets.html">
+            Гаджеты <span class="category-nav__count">3</span>
+          </a>
+        </li>
+        <li>
+          <a class="category-nav__link category-nav__link--active" href="category-computers.html" aria-current="page">
+            Компьютеры <span class="category-nav__count">3</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="catalog-layout">
+      <!-- фильтры под эту категорию вместо общих категорий каталога -->
+      <aside class="catalog-filters">
+        <h2 class="catalog-filters__title">Фильтры</h2>
+
+        <form class="catalog-filters__form" action="#" method="get">
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Тип устройства</legend>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="type" value="laptop">
+              Ноутбуки
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="type" value="keyboard">
+              Клавиатуры
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="type" value="mouse">
+              Мыши
+            </label>
+          </fieldset>
+
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Подключение</legend>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="connection" value="bluetooth">
+              Bluetooth
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="connection" value="radio">
+              Радиоканал 2,4 ГГц
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="connection" value="usb">
+              USB-кабель
+            </label>
+          </fieldset>
+
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Наличие</legend>
+
+            <label class="catalog-filters__label">
+              <input type="radio" name="stock" value="any" checked>
+              Все товары
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="radio" name="stock" value="available">
+              В наличии
+            </label>
+          </fieldset>
+
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Цена, руб.</legend>
+
+            <label class="catalog-filters__label" for="price-from">От</label>
+            <input class="catalog-filters__input" id="price-from" name="price-from" type="number" min="0" placeholder="1290">
+
+            <label class="catalog-filters__label" for="price-to">До</label>
+            <input class="catalog-filters__input" id="price-to" name="price-to" type="number" min="0" placeholder="64990">
+          </fieldset>
+
+          <div class="catalog-filters__actions">
+            <button class="button button--primary" type="submit">Применить</button>
+            <button class="button button--secondary" type="reset">Сбросить</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="catalog-products">
+        <h2 class="catalog-products__title">Товары категории</h2>
+
+        <div class="catalog-toolbar">
+          <p class="catalog-toolbar__count">Найдено товаров: 3</p>
+
+          <label class="catalog-toolbar__label">
+            Сортировка
+            <select class="catalog-toolbar__select" name="sort">
+              <option value="popular">По популярности</option>
+              <option value="price-asc">Сначала дешевле</option>
+              <option value="price-desc">Сначала дороже</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <img
+              class="product-card__img"
+              src="images/laptop.jpg"
+              alt="Открытый серебристый ноутбук на белом столе"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+
+            <h3 class="product-card__title">Ноутбук 14″</h3>
+            <p class="product-card__description">Лёгкий ноутбук весом 1,4 кг: 16 ГБ ОЗУ и SSD на 512 ГБ.</p>
+            <p class="product-card__stock product-card__stock--available">В наличии</p>
+            <p class="product-card__price">64&nbsp;990 руб.</p>
+
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product-laptop.html">Подробнее</a>
+              <button
+                class="button button--primary"
+                type="button"
+                data-product="Ноутбук 14″"
+                data-price="64 990 руб."
+                data-image="images/laptop.jpg"
+              >Заказать</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--sale"><span class="visually-hidden">Скидка </span>−12%</span>
+            <img
+              class="product-card__img"
+              src="images/keyboard.jpg"
+              alt="Тонкая белая клавиатура на деревянном столе"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+
+            <h3 class="product-card__title">Беспроводная клавиатура</h3>
+            <p class="product-card__description">Тонкая клавиатура с тихими клавишами и цифровым блоком.</p>
+            <p class="product-card__stock product-card__stock--available">В наличии</p>
+            <p class="product-card__price">3&nbsp;490 руб. <s class="product-card__price-old"><span class="visually-hidden">Старая цена: </span>3&nbsp;990 руб.</s></p>
+
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product-keyboard.html">Подробнее</a>
+              <button
+                class="button button--primary"
+                type="button"
+                data-product="Беспроводная клавиатура"
+                data-price="3 490 руб."
+                data-image="images/keyboard.jpg"
+              >Заказать</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img
+              class="product-card__img"
+              src="images/mouse.jpg"
+              alt="Серебристо-чёрная беспроводная мышь на белом фоне"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+
+            <h3 class="product-card__title">Беспроводная мышь</h3>
+            <p class="product-card__description">Эргономичная мышь с приёмником 2,4 ГГц, до года на одной батарейке.</p>
+            <p class="product-card__stock product-card__stock--available">В наличии</p>
+            <p class="product-card__price">1&nbsp;290 руб.</p>
+
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product-mouse.html">Подробнее</a>
+              <button
+                class="button button--primary"
+                type="button"
+                data-product="Беспроводная мышь"
+                data-price="1 290 руб."
+                data-image="images/mouse.jpg"
+              >Заказать</button>
+            </div>
+          </article>
+        </div>
+
+        <section class="catalog-products__extra" id="tips">
+          <h2 class="section__title">Как выбрать технику для работы</h2>
+
+          <div class="tips">
+            <article class="tips__item">
+              <h3 class="tips__title">Оперативная память</h3>
+              <p class="tips__text">
+                Для учёбы и офиса хватит 8 ГБ, для программирования
+                и работы с фото лучше 16 ГБ.
+              </p>
+            </article>
+
+            <article class="tips__item">
+              <h3 class="tips__title">Вес ноутбука</h3>
+              <p class="tips__text">
+                Если ноутбук каждый день в рюкзаке,
+                выбирайте модели легче 1,5 кг.
+              </p>
+            </article>
+
+            <article class="tips__item">
+              <h3 class="tips__title">Тихая клавиатура</h3>
+              <p class="tips__text">
+                Ножничный механизм работает тише механических
+                клавиатур — удобно в общежитии и опенспейсе.
+              </p>
+            </article>
+
+            <article class="tips__item">
+              <h3 class="tips__title">Мышь для поездок</h3>
+              <p class="tips__text">
+                Компактная мышь с приёмником в корпусе
+                не потеряется в дороге.
+              </p>
+            </article>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+      <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+
+  <a class="to-top" href="#top">Наверх</a>
+
+  <!-- Модальное окно заявки: открывается кнопками с data-product, см. js/main.js -->
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <div class="order-dialog__header">
+      <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+      <button class="order-dialog__close" type="button" aria-label="Закрыть окно" data-dialog-close>&times;</button>
+    </div>
+
+    <div class="order-dialog__content">
+      <!-- выбранный товар, данные подставляются из data-атрибутов кнопки -->
+      <div class="order-dialog__product">
+        <img
+          class="order-dialog__product-img"
+          id="order-product-img"
+          src="images/headphones.jpg"
+          alt=""
+          width="96"
+          height="72"
+        >
+        <div>
+          <p class="order-dialog__product-name" id="order-product-name"></p>
+          <p class="order-dialog__product-price" id="order-product-price"></p>
+        </div>
+      </div>
+
+      <form class="order-form" id="order-form" action="#" method="post" novalidate>
+        <input id="selected-product" name="selected-product" type="hidden">
+
+        <p class="order-form__note">
+          Поля, отмеченные <span class="order-form__required" aria-hidden="true">*</span>, обязательны для заполнения.
+        </p>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-name">
+            Имя <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-name"
+            name="name"
+            type="text"
+            placeholder="Введите ваше имя"
+            minlength="2"
+            autocomplete="given-name"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-email">
+            E-mail <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-email"
+            name="email"
+            type="email"
+            placeholder="example@mail.ru"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-phone">
+            Телефон <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="+7 (900) 000-00-00"
+            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            aria-describedby="order-phone-hint"
+            required
+          >
+          <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-date">Дата связи</label>
+          <input
+            class="order-form__input"
+            id="order-date"
+            name="date"
+            type="date"
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-topic">
+            Тема заявки <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <select class="order-form__select" id="order-topic" name="topic" required>
+            <option value="">Выберите тему</option>
+            <option value="product">Заказ товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-comment">Комментарий</label>
+          <textarea
+            class="order-form__textarea"
+            id="order-comment"
+            name="comment"
+            rows="4"
+            placeholder="Укажите дополнительную информацию"
+          ></textarea>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label">
+            <input
+              id="order-agreement"
+              name="agreement"
+              type="checkbox"
+              required
+            >
+            Я согласен на обработку данных <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+        </div>
+
+        <div class="order-form__actions">
+          <button class="button button--secondary" type="button" data-dialog-close>Отмена</button>
+          <button class="button button--primary" type="submit">Отправить заявку</button>
+        </div>
+      </form>
+
+      <!-- показывается вместо формы после успешной отправки -->
+      <div class="order-dialog__success" id="order-success" role="status" hidden>
+        <span class="order-dialog__success-icon" aria-hidden="true">&#10003;</span>
+        <h3 class="order-dialog__success-title">Заявка отправлена</h3>
+        <p class="order-dialog__success-text" id="order-success-text"></p>
+        <button class="button button--primary" type="button" data-dialog-close>Готово</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

@@ -75,12 +75,12 @@
           </a>
         </li>
         <li>
-          <a class="category-nav__link" href="catalog.html#gadgets">
+          <a class="category-nav__link" href="category-gadgets.html">
             Гаджеты <span class="category-nav__count">3</span>
           </a>
         </li>
         <li>
-          <a class="category-nav__link" href="catalog.html#computers">
+          <a class="category-nav__link" href="category-computers.html">
             Компьютеры <span class="category-nav__count">3</span>
           </a>
         </li>
@@ -88,7 +88,7 @@
     </nav>
 
     <section class="catalog-layout">
-      <!-- фильтры этой категории: тип устройства и подключение вместо общих категорий -->
+      <!-- фильтры под эту категорию вместо общих категорий каталога -->
       <aside class="catalog-filters">
         <h2 class="catalog-filters__title">Фильтры</h2>
 
@@ -137,6 +137,11 @@
             <label class="catalog-filters__label">
               <input type="radio" name="stock" value="available">
               В наличии
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="radio" name="stock" value="order">
+              Под заказ
             </label>
           </fieldset>
 

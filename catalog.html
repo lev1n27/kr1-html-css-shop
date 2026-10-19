@@ -39,13 +39,13 @@
     <section class="section">
       <h1>Каталог товаров</h1>
       <p>
-        В каталоге 10 товаров в трёх категориях. Фильтры слева остаются на экране
-        при прокрутке списка. Для категории «Аудио» есть отдельная страница,
+        В каталоге 10 товаров в трёх категориях, у каждой категории есть отдельная
+        страница. Фильтры слева остаются на экране при прокрутке списка,
         а под списком товаров — таблица сравнения популярных моделей.
       </p>
     </section>
 
-    <!-- Категории: «Аудио» ведёт на отдельную страницу, остальные — к разделам ниже -->
+    <!-- Категории: у каждой есть отдельная страница -->
     <nav class="category-nav" aria-label="Категории каталога">
       <ul class="category-nav__list">
         <li>
@@ -59,12 +59,12 @@
           </a>
         </li>
         <li>
-          <a class="category-nav__link" href="#gadgets">
+          <a class="category-nav__link" href="category-gadgets.html">
             Гаджеты <span class="category-nav__count">3</span>
           </a>
         </li>
         <li>
-          <a class="category-nav__link" href="#computers">
+          <a class="category-nav__link" href="category-computers.html">
             Компьютеры <span class="category-nav__count">3</span>
           </a>
         </li>
@@ -291,6 +291,7 @@
         <section class="catalog-group" id="gadgets" aria-labelledby="gadgets-title">
           <div class="catalog-group__header">
             <h3 class="catalog-group__title" id="gadgets-title">Гаджеты</h3>
+            <a href="category-gadgets.html">Все товары раздела</a>
           </div>
 
           <div class="products-grid">
@@ -381,6 +382,7 @@
         <section class="catalog-group" id="computers" aria-labelledby="computers-title">
           <div class="catalog-group__header">
             <h3 class="catalog-group__title" id="computers-title">Компьютеры</h3>
+            <a href="category-computers.html">Все товары раздела</a>
           </div>
 
           <div class="products-grid">
