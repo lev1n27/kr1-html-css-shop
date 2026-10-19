@@ -40,7 +40,8 @@
       <p>
         На этой странице представлен учебный каталог товаров.
         Слева расположены фильтры, справа — список товаров.
-        В дальнейшем будут добавлены сортировка и более подробные карточки.
+        Подробная информация о товаре открывается по кнопке «Подробнее»,
+        а под списком товаров есть таблица сравнения.
       </p>
     </section>
 
@@ -100,7 +101,7 @@
             <p class="product-card__description">Краткое описание учебного товара.</p>
             <p class="product-card__price">Цена: 1000 руб.</p>
 
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card">
@@ -136,6 +137,63 @@
           </article>
         </div>
       </section>
+    </section>
+
+    <section class="section" id="compare">
+      <h2 class="section__title">Сравнение товаров</h2>
+
+      <!-- обёртка даёт горизонтальную прокрутку, если таблица не помещается -->
+      <div class="table-scroll">
+        <table class="specs-table specs-table--compare">
+          <caption class="specs-table__caption">Основные характеристики товаров каталога</caption>
+          <thead>
+            <tr>
+              <th class="specs-table__head" scope="col">Характеристика</th>
+              <th class="specs-table__head" scope="col"><a href="product.html">Товар 1</a></th>
+              <th class="specs-table__head" scope="col">Товар 2</th>
+              <th class="specs-table__head" scope="col">Товар 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="specs-table__head" scope="row">Цена</th>
+              <td class="specs-table__cell">1000 руб.</td>
+              <td class="specs-table__cell">1500 руб.</td>
+              <td class="specs-table__cell">2000 руб.</td>
+            </tr>
+            <tr>
+              <th class="specs-table__head" scope="row">Категория</th>
+              <td class="specs-table__cell">Популярные</td>
+              <td class="specs-table__cell">Новинки</td>
+              <td class="specs-table__cell">Новинки</td>
+            </tr>
+            <tr>
+              <th class="specs-table__head" scope="row">Материал</th>
+              <td class="specs-table__cell">Пластик</td>
+              <td class="specs-table__cell">Металл</td>
+              <td class="specs-table__cell">Дерево</td>
+            </tr>
+            <tr>
+              <th class="specs-table__head" scope="row">Вес</th>
+              <td class="specs-table__cell">350 г</td>
+              <td class="specs-table__cell">500 г</td>
+              <td class="specs-table__cell">700 г</td>
+            </tr>
+            <tr>
+              <th class="specs-table__head" scope="row">Гарантия</th>
+              <td class="specs-table__cell">12 месяцев</td>
+              <td class="specs-table__cell">12 месяцев</td>
+              <td class="specs-table__cell">24 месяца</td>
+            </tr>
+            <tr>
+              <th class="specs-table__head" scope="row">Наличие</th>
+              <td class="specs-table__cell">В наличии</td>
+              <td class="specs-table__cell">В наличии</td>
+              <td class="specs-table__cell">Под заказ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
   </main>
 
