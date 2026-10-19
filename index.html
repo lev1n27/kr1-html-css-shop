@@ -113,10 +113,86 @@
       </div>
     </section>
 
+    <section class="section" id="reviews">
+      <h2 class="section__title">Отзывы покупателей</h2>
+
+      <div class="reviews">
+        <figure class="review">
+          <blockquote class="review__text">
+            <p>Заказал товар 1, привезли на следующий день. Качество отличное, всё как в описании.</p>
+          </blockquote>
+          <figcaption class="review__author">
+            Алексей
+            <span class="review__rating" aria-label="Оценка 5 из 5">★★★★★</span>
+          </figcaption>
+        </figure>
+
+        <figure class="review">
+          <blockquote class="review__text">
+            <p>Удобный каталог и понятная форма заявки. Менеджер быстро перезвонил и всё уточнил.</p>
+          </blockquote>
+          <figcaption class="review__author">
+            Мария
+            <span class="review__rating" aria-label="Оценка 5 из 5">★★★★★</span>
+          </figcaption>
+        </figure>
+
+        <figure class="review">
+          <blockquote class="review__text">
+            <p>Хороший выбор товаров. Хотелось бы больше вариантов доставки, но в целом всё понравилось.</p>
+          </blockquote>
+          <figcaption class="review__author">
+            Дмитрий
+            <span class="review__rating" aria-label="Оценка 4 из 5">★★★★☆</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <h2 class="section__title">Часто задаваемые вопросы</h2>
+
+      <!-- details/summary раскрываются по клику без JavaScript -->
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__question">Как оформить заказ?</summary>
+          <p class="faq__answer">
+            Нажмите кнопку «Заказать» в карточке товара, заполните форму
+            заявки и отправьте её. Менеджер свяжется с вами для подтверждения.
+          </p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Сколько стоит доставка?</summary>
+          <p class="faq__answer">
+            Доставка по Москве бесплатная при заказе от 3000 руб.
+            В остальных случаях стоимость рассчитывается менеджером.
+          </p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Можно ли вернуть товар?</summary>
+          <p class="faq__answer">
+            Да, товар можно вернуть в течение 14 дней, если он не был
+            в использовании и сохранил товарный вид.
+          </p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Как узнать характеристики товара?</summary>
+          <p class="faq__answer">
+            Характеристики указаны на странице товара, а сравнить товары
+            между собой можно в таблице на странице
+            <a href="catalog.html#compare">каталога</a>.
+          </p>
+        </details>
+      </div>
+    </section>
+
     <aside class="info-panel">
       <h2>Информация для студентов</h2>
       <p>
-        Сайт состоит из трёх страниц: главной, каталога и контактов.
+        Сайт состоит из четырёх страниц: главной, каталога, страницы товара и контактов.
         В проекте используются Flexbox и CSS Grid, БЭМ-именование классов
         и базовое позиционирование элементов. На следующих занятиях будет
         добавлена адаптивная версия сайта.

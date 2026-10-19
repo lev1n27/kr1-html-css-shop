@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Подробная карточка товара учебного интернет-магазина: описание, цена и характеристики.">
+  <title>Товар 1 — Учебный интернет-магазин</title>
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Товар 1 — Учебный интернет-магазин">
+  <meta property="og:description" content="Подробная карточка учебного товара с описанием и характеристиками.">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Товар 1</span>
+    </nav>
+
+    <!-- Подробная карточка: изображение слева, информация о товаре справа -->
+    <article class="product-details">
+      <div class="product-details__media">
+        <span class="product-details__badge">Хит</span>
+        <img
+          class="product-details__img"
+          src="images/product-1.svg"
+          alt="Изображение товара 1"
+          width="400"
+          height="300"
+        >
+      </div>
+
+      <div class="product-details__info">
+        <h1 class="product-details__title">Товар 1</h1>
+        <p class="product-details__category">Категория: популярные товары</p>
+
+        <p class="product-details__description">
+          Подробное описание учебного товара. Здесь рассказывается,
+          для чего нужен товар, из чего он сделан и чем отличается
+          от других товаров каталога.
+        </p>
+
+        <ul class="product-details__features">
+          <li>гарантия 12 месяцев;</li>
+          <li>доставка от 1 дня;</li>
+          <li>возврат в течение 14 дней.</li>
+        </ul>
+
+        <p class="product-details__stock product-details__stock--available">В наличии</p>
+        <p class="product-details__price">1000 руб.</p>
+
+        <div class="product-details__actions">
+          <a class="button button--primary" href="index.html#popular">Оформить заявку</a>
+          <a class="button button--secondary" href="catalog.html">Вернуться в каталог</a>
+        </div>
+      </div>
+    </article>
+
+    <section class="section" id="specs">
+      <h2 class="section__title">Характеристики</h2>
+
+      <table class="specs-table">
+        <caption class="specs-table__caption">Характеристики товара 1</caption>
+        <tbody>
+          <tr>
+            <th class="specs-table__head" scope="row">Артикул</th>
+            <td class="specs-table__cell">SP-0001</td>
+          </tr>
+          <tr>
+            <th class="specs-table__head" scope="row">Материал</th>
+            <td class="specs-table__cell">Пластик</td>
+          </tr>
+          <tr>
+            <th class="specs-table__head" scope="row">Размеры</th>
+            <td class="specs-table__cell">20 × 15 × 5 см</td>
+          </tr>
+          <tr>
+            <th class="specs-table__head" scope="row">Вес</th>
+            <td class="specs-table__cell">350 г</td>
+          </tr>
+          <tr>
+            <th class="specs-table__head" scope="row">Цвет</th>
+            <td class="specs-table__cell">Синий</td>
+          </tr>
+          <tr>
+            <th class="specs-table__head" scope="row">Страна производства</th>
+            <td class="specs-table__cell">Россия</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+      <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+
+  <a class="to-top" href="#top">Наверх</a>
+</body>
+</html>
