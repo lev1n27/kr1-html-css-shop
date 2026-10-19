@@ -1,39 +1,76 @@
 // Получаем модальное окно по id.
 const orderDialog = document.getElementById('order-dialog');
 
-// Получаем все кнопки заказа в карточках товаров.
-const orderButtons = document.querySelectorAll('.product-card__button');
+// Получаем все кнопки заказа: у каждой есть data-product с названием товара.
+const orderButtons = document.querySelectorAll('[data-product]');
 
-// Получаем кнопку закрытия модального окна.
-const closeDialogButton = document.getElementById('close-order-dialog');
+// Получаем все кнопки закрытия окна: крестик, «Отмена» и «Готово».
+const closeDialogButtons = orderDialog.querySelectorAll('[data-dialog-close]');
 
 // Получаем скрытое поле, в которое будет записан выбранный товар.
 const selectedProductInput = document.getElementById('selected-product');
 
+// Получаем блок с выбранным товаром в окне.
+const orderProductImage = document.getElementById('order-product-img');
+const orderProductName = document.getElementById('order-product-name');
+const orderProductPrice = document.getElementById('order-product-price');
+
+// Получаем форму заявки и сообщение об успешной отправке.
+const orderForm = document.getElementById('order-form');
+const orderSuccess = document.getElementById('order-success');
+const orderSuccessText = document.getElementById('order-success-text');
+const orderTopicSelect = document.getElementById('order-topic');
+
 // Перебираем все кнопки «Заказать».
 orderButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    // Получаем название товара из data-атрибута.
-    const productName = button.dataset.product;
+    // Получаем данные о товаре из data-атрибутов кнопки.
+    const { product, price, image } = button.dataset;
 
     // Записываем название товара в скрытое поле формы.
-    selectedProductInput.value = productName;
+    selectedProductInput.value = product;
+
+    // Показываем в окне, какой товар заказывается.
+    orderProductName.textContent = product;
+    orderProductPrice.textContent = price;
+    orderProductImage.src = image;
+    orderProductImage.alt = product;
+
+    // Заявка из карточки товара — сразу выбираем тему «Заказ товара».
+    orderTopicSelect.value = 'product';
+
+    // Показываем форму, а не сообщение от прошлой заявки.
+    orderForm.hidden = false;
+    orderSuccess.hidden = true;
 
     // Открываем модальное окно.
     orderDialog.showModal();
   });
 });
 
-// Закрываем модальное окно по кнопке «Закрыть».
-closeDialogButton.addEventListener('click', () => {
-  orderDialog.close();
+// Закрываем модальное окно по любой кнопке закрытия.
+closeDialogButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    orderDialog.close();
+  });
 });
 
-// Получаем форму заявки.
-const orderForm = document.getElementById('order-form');
+// Закрываем окно по клику на затемнённый фон.
+// Клик по фону приходит на сам <dialog>, а клик по содержимому — на его дочерние блоки.
+orderDialog.addEventListener('click', (event) => {
+  if (event.target === orderDialog) {
+    orderDialog.close();
+  }
+});
 
-// Получаем сообщение об успешной отправке.
-const successMessage = document.getElementById('success-message');
+// При любом закрытии окна (крестик, фон, Esc) очищаем форму и ошибки.
+orderDialog.addEventListener('close', () => {
+  orderForm.reset();
+
+  Array.from(orderForm.elements).forEach((element) => {
+    element.removeAttribute('aria-invalid');
+  });
+});
 
 // Обрабатываем отправку формы.
 orderForm.addEventListener('submit', (event) => {
@@ -63,12 +100,14 @@ orderForm.addEventListener('submit', (event) => {
     return;
   }
 
-  // Показываем сообщение об успешной отправке.
-  successMessage.hidden = false;
+  // Вместо формы показываем сообщение об успешной отправке прямо в окне.
+  orderSuccessText.textContent =
+    `Заявка на товар «${selectedProductInput.value}» принята. ` +
+    'Менеджер свяжется с вами в течение рабочего дня.';
 
-  // Очищаем форму.
-  orderForm.reset();
+  orderForm.hidden = true;
+  orderSuccess.hidden = false;
 
-  // Закрываем модальное окно.
-  orderDialog.close();
+  // Переводим фокус на кнопку «Готово», чтобы её было удобно нажать с клавиатуры.
+  orderSuccess.querySelector('button').focus();
 });

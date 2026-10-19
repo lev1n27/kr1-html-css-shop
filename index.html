@@ -60,55 +60,79 @@
           <span class="product-card__badge">Хит</span>
           <img
             class="product-card__img"
-            src="images/product-1.svg"
-            alt="Изображение товара 1"
-            width="400"
-            height="300"
+            src="images/headphones.jpg"
+            alt="Чёрные накладные наушники на жёлтом фоне"
+            width="800"
+            height="600"
           >
 
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
+          <p class="product-card__category">Аудио</p>
+          <h3 class="product-card__title">Беспроводные наушники</h3>
+          <p class="product-card__description">Накладные наушники с Bluetooth 5.3 и работой до 30 часов.</p>
+          <p class="product-card__price">7&nbsp;990 руб.</p>
 
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
+          <div class="product-card__actions">
+            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <button
+              class="button button--primary"
+              type="button"
+              data-product="Беспроводные наушники"
+              data-price="7 990 руб."
+              data-image="images/headphones.jpg"
+            >Заказать</button>
+          </div>
         </article>
 
         <article class="product-card">
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
           <img
             class="product-card__img"
-            src="images/product-2.svg"
-            alt="Изображение товара 2"
-            width="400"
-            height="300"
+            src="images/smartwatch.jpg"
+            alt="Умные часы с чёрным ремешком"
+            width="800"
+            height="600"
           >
 
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1500 руб.</p>
+          <p class="product-card__category">Гаджеты</p>
+          <h3 class="product-card__title">Умные часы</h3>
+          <p class="product-card__description">Пульсометр, GPS, уведомления и до 7 дней без подзарядки.</p>
+          <p class="product-card__price">14&nbsp;990 руб.</p>
 
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
-            Заказать
-          </button>
+          <div class="product-card__actions">
+            <button
+              class="button button--primary"
+              type="button"
+              data-product="Умные часы"
+              data-price="14 990 руб."
+              data-image="images/smartwatch.jpg"
+            >Заказать</button>
+          </div>
         </article>
 
         <article class="product-card">
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
           <img
             class="product-card__img"
-            src="images/product-3.svg"
-            alt="Изображение товара 3"
-            width="400"
-            height="300"
+            src="images/speaker.jpg"
+            alt="Чёрная портативная колонка на деревянном столе"
+            width="800"
+            height="600"
           >
 
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 2000 руб.</p>
+          <p class="product-card__category">Аудио</p>
+          <h3 class="product-card__title">Портативная колонка</h3>
+          <p class="product-card__description">Влагозащищённая колонка IPX7, до 12 часов музыки.</p>
+          <p class="product-card__price">5&nbsp;990 руб.</p>
 
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
-            Заказать
-          </button>
+          <div class="product-card__actions">
+            <button
+              class="button button--primary"
+              type="button"
+              data-product="Портативная колонка"
+              data-price="5 990 руб."
+              data-image="images/speaker.jpg"
+            >Заказать</button>
+          </div>
         </article>
       </div>
     </section>
@@ -119,7 +143,7 @@
       <div class="reviews">
         <figure class="review">
           <blockquote class="review__text">
-            <p>Заказал товар 1, привезли на следующий день. Качество отличное, всё как в описании.</p>
+            <p>Заказал беспроводные наушники, привезли на следующий день. Звук отличный, всё как в описании.</p>
           </blockquote>
           <figcaption class="review__author">
             Алексей
@@ -192,7 +216,8 @@
     <aside class="info-panel">
       <h2>Информация для студентов</h2>
       <p>
-        Сайт состоит из четырёх страниц: главной, каталога, страницы товара и контактов.
+        Сайт состоит из пяти страниц: главной, каталога, страницы категории «Аудио»,
+        страницы товара и контактов.
         В проекте используются Flexbox и CSS Grid, БЭМ-именование классов
         и базовое позиционирование элементов. На следующих занятиях будет
         добавлена адаптивная версия сайта.
@@ -209,106 +234,146 @@
 
   <!-- Кнопка с position: fixed, всегда остаётся в углу окна. -->
   <a class="to-top" href="#top">Наверх</a>
+
+  <!-- Модальное окно заявки: открывается кнопками с data-product, см. js/main.js -->
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+    <div class="order-dialog__header">
+      <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+      <button class="order-dialog__close" type="button" aria-label="Закрыть окно" data-dialog-close>&times;</button>
+    </div>
 
-    <form class="order-form" id="order-form" action="#" method="post" novalidate>
-      <input id="selected-product" name="selected-product" type="hidden">
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-name">Имя</label>
-        <input
-          class="order-form__input"
-          id="order-name"
-          name="name"
-          type="text"
-          placeholder="Введите ваше имя"
-          minlength="2"
-          autocomplete="given-name"
-          required
+    <div class="order-dialog__content">
+      <!-- выбранный товар, данные подставляются из data-атрибутов кнопки -->
+      <div class="order-dialog__product">
+        <img
+          class="order-dialog__product-img"
+          id="order-product-img"
+          src="images/headphones.jpg"
+          alt=""
+          width="96"
+          height="72"
         >
+        <div>
+          <p class="order-dialog__product-name" id="order-product-name"></p>
+          <p class="order-dialog__product-price" id="order-product-price"></p>
+        </div>
       </div>
 
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-email">E-mail</label>
-        <input
-          class="order-form__input"
-          id="order-email"
-          name="email"
-          type="email"
-          placeholder="example@mail.ru"
-          autocomplete="email"
-          required
-        >
-      </div>
+      <form class="order-form" id="order-form" action="#" method="post" novalidate>
+        <input id="selected-product" name="selected-product" type="hidden">
 
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-phone">Телефон</label>
-        <input
-          class="order-form__input"
-          id="order-phone"
-          name="phone"
-          type="tel"
-          inputmode="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-          required
-        >
-        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
-      </div>
+        <p class="order-form__note">
+          Поля, отмеченные <span class="order-form__required" aria-hidden="true">*</span>, обязательны для заполнения.
+        </p>
 
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-date">Дата связи</label>
-        <input
-          class="order-form__input"
-          id="order-date"
-          name="date"
-          type="date"
-        >
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-topic">Тема заявки</label>
-        <select class="order-form__select" id="order-topic" name="topic" required>
-          <option value="">Выберите тему</option>
-          <option value="product">Заказ товара</option>
-          <option value="consultation">Консультация</option>
-          <option value="delivery">Доставка</option>
-        </select>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-comment">Комментарий</label>
-        <textarea
-          class="order-form__textarea"
-          id="order-comment"
-          name="comment"
-          rows="4"
-          placeholder="Укажите дополнительную информацию"
-        ></textarea>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label">
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-name">
+            Имя <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
           <input
-            id="order-agreement"
-            name="agreement"
-            type="checkbox"
+            class="order-form__input"
+            id="order-name"
+            name="name"
+            type="text"
+            placeholder="Введите ваше имя"
+            minlength="2"
+            autocomplete="given-name"
             required
           >
-          Я согласен на обработку данных
-        </label>
-      </div>
+        </div>
 
-      <div class="order-form__actions">
-        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
-        <button class="button button--primary" type="submit">Отправить заявку</button>
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-email">
+            E-mail <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-email"
+            name="email"
+            type="email"
+            placeholder="example@mail.ru"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-phone">
+            Телефон <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="+7 (900) 000-00-00"
+            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            aria-describedby="order-phone-hint"
+            required
+          >
+          <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-date">Дата связи</label>
+          <input
+            class="order-form__input"
+            id="order-date"
+            name="date"
+            type="date"
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-topic">
+            Тема заявки <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <select class="order-form__select" id="order-topic" name="topic" required>
+            <option value="">Выберите тему</option>
+            <option value="product">Заказ товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-comment">Комментарий</label>
+          <textarea
+            class="order-form__textarea"
+            id="order-comment"
+            name="comment"
+            rows="4"
+            placeholder="Укажите дополнительную информацию"
+          ></textarea>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label">
+            <input
+              id="order-agreement"
+              name="agreement"
+              type="checkbox"
+              required
+            >
+            Я согласен на обработку данных <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+        </div>
+
+        <div class="order-form__actions">
+          <button class="button button--secondary" type="button" data-dialog-close>Отмена</button>
+          <button class="button button--primary" type="submit">Отправить заявку</button>
+        </div>
+      </form>
+
+      <!-- показывается вместо формы после успешной отправки -->
+      <div class="order-dialog__success" id="order-success" role="status" hidden>
+        <span class="order-dialog__success-icon" aria-hidden="true">&#10003;</span>
+        <h3 class="order-dialog__success-title">Заявка отправлена</h3>
+        <p class="order-dialog__success-text" id="order-success-text"></p>
+        <button class="button button--primary" type="button" data-dialog-close>Готово</button>
       </div>
-    </form>
+    </div>
   </dialog>
-
-  <p class="success-message" id="success-message" hidden>
-    Форма успешно отправлена!
-  </p>
 </body>
 </html>

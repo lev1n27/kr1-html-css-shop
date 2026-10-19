@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Категория «Аудио» учебного интернет-магазина: беспроводные наушники, портативные колонки и акустика для дома.">
+  <title>Аудио — Учебный интернет-магазин</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Аудио — Учебный интернет-магазин">
+  <meta property="og:description" content="Наушники, колонки и акустика для дома в учебном каталоге.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Аудио</span>
+    </nav>
+
+    <!-- Первый экран категории: описание и фото в две колонки (CSS Grid) -->
+    <section class="category-hero">
+      <div>
+        <h1 class="category-hero__title">Аудио</h1>
+        <p>
+          Беспроводные наушники, портативные колонки и акустика для дома.
+          Подойдёт для музыки в дороге, звонков и домашнего кинотеатра.
+        </p>
+
+        <ul class="category-hero__facts">
+          <li class="category-hero__fact">4 товара</li>
+          <li class="category-hero__fact">от 4&nbsp;490 руб.</li>
+          <li class="category-hero__fact">гарантия до 24 месяцев</li>
+        </ul>
+      </div>
+
+      <img
+        class="category-hero__img"
+        src="images/category-audio.jpg"
+        alt="Серебристые накладные наушники с кожаным оголовьем"
+        width="900"
+        height="600"
+      >
+    </section>
+
+    <nav class="category-nav" aria-label="Категории каталога">
+      <ul class="category-nav__list">
+        <li>
+          <a class="category-nav__link" href="catalog.html">
+            Все товары <span class="category-nav__count">10</span>
+          </a>
+        </li>
+        <li>
+          <a class="category-nav__link category-nav__link--active" href="category-audio.html" aria-current="page">
+            Аудио <span class="category-nav__count">4</span>
+          </a>
+        </li>
+        <li>
+          <a class="category-nav__link" href="catalog.html#gadgets">
+            Гаджеты <span class="category-nav__count">3</span>
+          </a>
+        </li>
+        <li>
+          <a class="category-nav__link" href="catalog.html#computers">
+            Компьютеры <span class="category-nav__count">3</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="catalog-layout">
+      <!-- фильтры этой категории: тип устройства и подключение вместо общих категорий -->
+      <aside class="catalog-filters">
+        <h2 class="catalog-filters__title">Фильтры</h2>
+
+        <form class="catalog-filters__form" action="#" method="get">
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Тип устройства</legend>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="type" value="headphones">
+              Наушники
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="type" value="speaker">
+              Портативные колонки
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="type" value="acoustics">
+              Акустика для дома
+            </label>
+          </fieldset>
+
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Подключение</legend>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="connection" value="bluetooth">
+              Bluetooth
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="checkbox" name="connection" value="wired">
+              Проводное
+            </label>
+          </fieldset>
+
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Наличие</legend>
+
+            <label class="catalog-filters__label">
+              <input type="radio" name="stock" value="any" checked>
+              Все товары
+            </label>
+
+            <label class="catalog-filters__label">
+              <input type="radio" name="stock" value="available">
+              В наличии
+            </label>
+          </fieldset>
+
+          <fieldset class="catalog-filters__group">
+            <legend class="catalog-filters__legend">Цена, руб.</legend>
+
+            <label class="catalog-filters__label" for="price-from">От</label>
+            <input class="catalog-filters__input" id="price-from" name="price-from" type="number" min="0" placeholder="4490">
+
+            <label class="catalog-filters__label" for="price-to">До</label>
+            <input class="catalog-filters__input" id="price-to" name="price-to" type="number" min="0" placeholder="12990">
+          </fieldset>
+
+          <div class="catalog-filters__actions">
+            <button class="button button--primary" type="submit">Применить</button>
+            <button class="button button--secondary" type="reset">Сбросить</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="catalog-products">
+        <h2 class="catalog-products__title">Товары категории</h2>
+
+        <div class="catalog-toolbar">
+          <p class="catalog-toolbar__count">Найдено товаров: 4</p>
+
+          <label class="catalog-toolbar__label">
+            Сортировка
+            <select class="catalog-toolbar__select" name="sort">
+              <option value="popular">По популярности</option>
+              <option value="price-asc">Сначала дешевле</option>
+              <option value="price-desc">Сначала дороже</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card product-card--featured">
+            <span class="product-card__badge">Хит</span>
+            <img
+              class="product-card__img"
+              src="images/headphones.jpg"
+              alt="Чёрные накладные наушники на жёлтом фоне"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+
+            <h3 class="product-card__title">Беспроводные наушники</h3>
+            <p class="product-card__description">Накладные наушники с Bluetooth 5.3 и работой до 30 часов.</p>
+            <p class="product-card__stock product-card__stock--available">В наличии</p>
+            <p class="product-card__price">7&nbsp;990 руб.</p>
+
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product.html">Подробнее</a>
+              <button
+                class="button button--primary"
+                type="button"
+                data-product="Беспроводные наушники"
+                data-price="7 990 руб."
+                data-image="images/headphones.jpg"
+              >Заказать</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--sale"><span class="visually-hidden">Скидка </span>−25%</span>
+            <img
+              class="product-card__img"
+              src="images/earbuds.jpg"
+              alt="Чёрные беспроводные наушники-вкладыши рядом с зарядным кейсом"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+
+            <h3 class="product-card__title">TWS-наушники</h3>
+            <p class="product-card__description">Компактные вкладыши с зарядным кейсом и активным шумоподавлением.</p>
+            <p class="product-card__stock product-card__stock--available">В наличии</p>
+            <p class="product-card__price">4&nbsp;490 руб. <s class="product-card__price-old"><span class="visually-hidden">Старая цена: </span>5&nbsp;990 руб.</s></p>
+
+            <div class="product-card__actions">
+              <button
+                class="button button--primary"
+                type="button"
+                data-product="TWS-наушники"
+                data-price="4 490 руб."
+                data-image="images/earbuds.jpg"
+              >Заказать</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--new">Новинка</span>
+            <img
+              class="product-card__img"
+              src="images/speaker.jpg"
+              alt="Чёрная портативная колонка на деревянном столе"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+
+            <h3 class="product-card__title">Портативная колонка</h3>
+            <p class="product-card__description">Влагозащищённая колонка IPX7, до 12 часов музыки.</p>
+            <p class="product-card__stock product-card__stock--available">В наличии</p>
+            <p class="product-card__price">5&nbsp;990 руб.</p>
+
+            <div class="product-card__actions">
+              <button
+                class="button button--primary"
+                type="button"
+                data-product="Портативная колонка"
+                data-price="5 990 руб."
+                data-image="images/speaker.jpg"
+              >Заказать</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img
+              class="product-card__img"
+              src="images/acoustics.jpg"
+              alt="Полочная колонка с деревянным корпусом"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+
+            <h3 class="product-card__title">Полочная акустика</h3>
+            <p class="product-card__description">Пара активных колонок с деревянным корпусом для дома.</p>
+            <p class="product-card__stock product-card__stock--order">Под заказ, 3–5 дней</p>
+            <p class="product-card__price">12&nbsp;990 руб.</p>
+
+            <div class="product-card__actions">
+              <button
+                class="button button--primary"
+                type="button"
+                data-product="Полочная акустика"
+                data-price="12 990 руб."
+                data-image="images/acoustics.jpg"
+              >Заказать</button>
+            </div>
+          </article>
+        </div>
+
+        <section class="catalog-products__extra" id="tips">
+          <h2 class="section__title">Как выбрать аудиотехнику</h2>
+
+          <div class="tips">
+            <article class="tips__item">
+              <h3 class="tips__title">Накладные или вкладыши</h3>
+              <p class="tips__text">
+                Накладные наушники лучше звучат и дольше работают,
+                вкладыши легче и помещаются в карман.
+              </p>
+            </article>
+
+            <article class="tips__item">
+              <h3 class="tips__title">Время работы</h3>
+              <p class="tips__text">
+                Для поездок выбирайте модели от 20 часов автономной работы
+                или с зарядным кейсом.
+              </p>
+            </article>
+
+            <article class="tips__item">
+              <h3 class="tips__title">Защита от воды</h3>
+              <p class="tips__text">
+                Колонке для улицы и пляжа нужна защита не ниже IPX5,
+                а для купания — IPX7.
+              </p>
+            </article>
+
+            <article class="tips__item">
+              <h3 class="tips__title">Колонки для дома</h3>
+              <p class="tips__text">
+                Полочная акустика с деревянным корпусом звучит теплее
+                и подходит для телевизора и проигрывателя.
+              </p>
+            </article>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+      <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+
+  <a class="to-top" href="#top">Наверх</a>
+
+  <!-- Модальное окно заявки: открывается кнопками с data-product, см. js/main.js -->
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <div class="order-dialog__header">
+      <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+      <button class="order-dialog__close" type="button" aria-label="Закрыть окно" data-dialog-close>&times;</button>
+    </div>
+
+    <div class="order-dialog__content">
+      <!-- выбранный товар, данные подставляются из data-атрибутов кнопки -->
+      <div class="order-dialog__product">
+        <img
+          class="order-dialog__product-img"
+          id="order-product-img"
+          src="images/headphones.jpg"
+          alt=""
+          width="96"
+          height="72"
+        >
+        <div>
+          <p class="order-dialog__product-name" id="order-product-name"></p>
+          <p class="order-dialog__product-price" id="order-product-price"></p>
+        </div>
+      </div>
+
+      <form class="order-form" id="order-form" action="#" method="post" novalidate>
+        <input id="selected-product" name="selected-product" type="hidden">
+
+        <p class="order-form__note">
+          Поля, отмеченные <span class="order-form__required" aria-hidden="true">*</span>, обязательны для заполнения.
+        </p>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-name">
+            Имя <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-name"
+            name="name"
+            type="text"
+            placeholder="Введите ваше имя"
+            minlength="2"
+            autocomplete="given-name"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-email">
+            E-mail <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-email"
+            name="email"
+            type="email"
+            placeholder="example@mail.ru"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-phone">
+            Телефон <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="order-form__input"
+            id="order-phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="+7 (900) 000-00-00"
+            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            aria-describedby="order-phone-hint"
+            required
+          >
+          <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-date">Дата связи</label>
+          <input
+            class="order-form__input"
+            id="order-date"
+            name="date"
+            type="date"
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-topic">
+            Тема заявки <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+          <select class="order-form__select" id="order-topic" name="topic" required>
+            <option value="">Выберите тему</option>
+            <option value="product">Заказ товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-comment">Комментарий</label>
+          <textarea
+            class="order-form__textarea"
+            id="order-comment"
+            name="comment"
+            rows="4"
+            placeholder="Укажите дополнительную информацию"
+          ></textarea>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label">
+            <input
+              id="order-agreement"
+              name="agreement"
+              type="checkbox"
+              required
+            >
+            Я согласен на обработку данных <span class="order-form__required" aria-hidden="true">*</span>
+          </label>
+        </div>
+
+        <div class="order-form__actions">
+          <button class="button button--secondary" type="button" data-dialog-close>Отмена</button>
+          <button class="button button--primary" type="submit">Отправить заявку</button>
+        </div>
+      </form>
+
+      <!-- показывается вместо формы после успешной отправки -->
+      <div class="order-dialog__success" id="order-success" role="status" hidden>
+        <span class="order-dialog__success-icon" aria-hidden="true">&#10003;</span>
+        <h3 class="order-dialog__success-title">Заявка отправлена</h3>
+        <p class="order-dialog__success-text" id="order-success-text"></p>
+        <button class="button button--primary" type="button" data-dialog-close>Готово</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
